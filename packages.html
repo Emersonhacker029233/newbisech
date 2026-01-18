@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Packages - BISECH Tours & Car Hire</title>
+    <meta name="description" content="Discover our exclusive Tanzania tour packages including wildlife safaris, beach holidays, and mountain expeditions.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Same CSS as index.html */
+        :root {
+            --primary: #228B22;          /* FOREST GREEN - Main color */
+            --primary-light: #32CD32;    /* LimeGreen - Lighter forest green */
+            --primary-dark: #006400;     /* DarkGreen - Darker forest green */
+            --secondary: #f3e9d2;
+            --accent: #c44536;
+            --text: #0f172a;
+            --text-light: #475569;
+            --text-muted: #64748b;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-primary {
+            background: rgba(34, 139, 34, 0.1);  /* Forest green with transparency */
+            color: var(--primary);
+        }
+
+        .badge-popular {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-logo {
+            width: 120px;
+            height: auto;
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-desktop ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-desktop a {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-desktop a:hover {
+            color: white;
+        }
+
+        .nav-desktop a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: var(--transition);
+        }
+
+        .nav-desktop a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 0;
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Packages Grid */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .package-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+        }
+
+        .package-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .package-content {
+            padding: 1.5rem;
+        }
+
+        .package-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .package-features {
+            margin: 1.5rem 0;
+        }
+
+        .package-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-feature i {
+            color: var(--accent);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 2;
+        }
+
+        /* REDESIGNED Package Categories Section */
+        .package-categories {
+            background: rgba(34, 139, 34, 0.05);  /* Forest green with transparency */
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category-card.expanded {
+            height: 500px;
+            grid-column: span 1;
+            grid-row: span 1;
+            z-index: 10;
+        }
+
+        .category-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            transition: height 0.4s ease;
+            position: relative;
+        }
+
+        .category-card.expanded .category-image {
+            height: 250px;
+        }
+
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(255,255,255,0.9);
+            color: var(--text);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .category-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .category-card.expanded .category-description {
+            -webkit-line-clamp: unset;
+            overflow: visible;
+        }
+
+        .category-details {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-top: 0;
+        }
+
+        .category-card.expanded .category-details {
+            opacity: 1;
+            max-height: 200px;
+            margin-top: 1rem;
+        }
+
+        .category-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .category-detail-item i {
+            color: var(--primary);
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .category-cta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .expand-btn {
+            background: transparent;
+            border: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: var(--transition);
+        }
+
+        .expand-btn:hover {
+            color: var(--primary-dark);
+        }
+
+        .expand-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .category-card.expanded .expand-btn i {
+            transform: rotate(180deg);
+        }
+
+        /* Enhanced TripAdvisor Review Section */
+        .tripadvisor-review-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tripadvisor-review-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            opacity: 0.1;
+            border-radius: 0 0 50% 50%;
+            transform: scale(1.5);
+        }
+
+        .tripadvisor-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .tripadvisor-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .tripadvisor-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .review-cta .btn-primary {
+            background: linear-gradient(135deg, #FFB100 0%, #FF8C00 100%);
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(255, 177, 0, 0.3);
+        }
+
+        .review-cta .btn-primary:hover {
+            background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 177, 0, 0.4);
+        }
+
+        .tripadvisor-logo-container {
+            text-align: center;
+        }
+
+        .tripadvisor-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .tripadvisor-logo:hover {
+            transform: translateY(-5px);
+        }
+
+        .tripadvisor-logo-img {
+            width: 140px;
+            height: auto;
+        }
+
+        .tripadvisor-stars {
+            color: #FFB100;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .rating-text {
+            font-weight: 700;
+            color: white;
+            background: var(--primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow);
+        }
+
+        /* Review Testimonials */
+        .review-testimonials {
+            margin-top: 2rem;
+        }
+
+        .testimonial-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-header h4 {
+            font-size: 1.5rem;
+            color: var(--text);
+            position: relative;
+            display: inline-block;
+        }
+
+        .testimonial-header h4:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card:hover .testimonial-image img {
+            transform: scale(1.05);
+        }
+
+        .testimonial-content {
+            padding: 1.5rem;
+        }
+
+        .testimonial-stars {
+            color: #FFB100;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-content p {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .guest-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .guest-name {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .guest-location {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Mountain Climbing Section */
+        .mountain-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .mountain-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .mountain-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 400px;
+        }
+
+        .mountain-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mountain-content h2 {
+            color: var(--text);
+        }
+
+        .mountain-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .mountain-features {
+            margin: 2rem 0;
+        }
+
+        .mountain-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .mountain-feature i {
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+
+        /* Custom Package Section */
+        .custom-package {
+            background: var(--primary);
+            color: white;
+        }
+
+        .custom-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .custom-content h2 {
+            color: white;
+        }
+
+        .custom-content h2:after {
+            background: white;
+        }
+
+        .custom-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: white;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: white;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-links h4:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* WhatsApp Numbers Section */
+        .whatsapp-numbers {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .whatsapp-number {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .whatsapp-number:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .whatsapp-number i {
+            color: #25D366;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .custom-container,
+            .mountain-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .mountain-image {
+                height: 300px;
+            }
+            
+            .tripadvisor-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .brand-logo {
+                width: 100px;
+            }
+            
+            .company-name {
+                font-size: 1.25rem;
+            }
+            
+            .whatsapp-numbers {
+                flex-direction: column;
+            }
+            
+            .category-card {
+                height: 380px;
+            }
+            
+            .category-card.expanded {
+                height: 480px;
+            }
+            
+            .tripadvisor-logo-img {
+                width: 120px;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tripadvisor-text h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .packages-grid,
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .brand-logo {
+                width: 90px;
+            }
+            
+            .company-name {
+                font-size: 1.1rem;
+            }
+            
+            .category-card {
+                height: 350px;
+            }
+            
+            .category-card.expanded {
+                height: 450px;
+            }
+            
+            .tripadvisor-logo-img {
+                width: 100px;
+            }
+            
+            .tripadvisor-review-section {
+                padding: 3rem 0;
+            }
+            
+            .tripadvisor-content {
+                padding: 1.5rem;
+            }
+            
+            .testimonial-image {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="brand">
+                <a href="index.html">
+                    <img src="image/1.png" alt="BISECH Logo" class="brand-logo">
+                </a>
+                <span class="company-name">BISECH</span>
+            </div>
+
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fleet.html">Fleet</a></li>
+                    <li><a href="packages.html" style="color: white;">Packages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="booking.html" class="btn btn-secondary">Book Now</a>
+            </nav>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="fleet.html">Fleet</a>
+            <a href="packages.html" style="color: white;">Packages</a>
+            <a href="contact.html">Contact</a>
+            <a href="booking.html" class="btn btn-primary" style="margin-top: 1rem; display: block; text-align: center;">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Top Tanzania Safaris Packages</h1>
+            <p>Discover Tanzania's wonders with our carefully crafted tour packages, designed to create unforgettable experiences.</p>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Packages</h2>
+                <p>Choose from our selection of popular Tanzania experiences, each designed to showcase the best of this beautiful country.</p>
+            </div>
+            <div class="packages-grid">
+                <div class="card package-card fade-in">
+                    <div class="package-badge">
+                        <span class="badge badge-popular">Most Popular</span>
+                    </div>
+                    <img src="image/7 (1).jpg" alt="Wildlife Safari Adventure" class="package-image">
+                    <div class="package-content">
+                        <h3>Wildlife Safari Adventure</h3>
+                        <p>Experience the best of Tanzania's wildlife with visits to Serengeti, Ngorongoro, and Tarangire National Parks.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>5 days / 4 nights</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Game drives in multiple parks</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Lodge accommodation</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Professional guide</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>All meals included</span>
+                            </div>
+                        </div>
+                        <div class="package-price"></div>
+                        <a href="booking.html" class="btn btn-primary">Book This Package</a>
+                    </div>
+                </div>
+                
+                <div class="card package-card fade-in">
+                    <img src="image/3 (1).jpg" alt="Wildlife Safari Adventure" class="package-image">
+                    <div class="package-content">
+                        <h3>Zanzibar Beach Escape</h3>
+                        <p>Relaxing beach stay with spice tours, Stone Town exploration, and snorkeling in pristine waters.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>4 days / 3 nights</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Beachfront accommodation</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Spice tour & Stone Town</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Snorkeling trip included</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Breakfast included</span>
+                            </div>
+                        </div>
+                        <div class="package-price"></div>
+                        <a href="booking.html" class="btn btn-primary">Book This Package</a>
+                    </div>
+                </div>
+                
+                <div class="card package-card fade-in">
+                    <div class="package-badge">
+                        <span class="badge badge-primary">Adventure</span>
+                    </div>
+                    <img src="image/kili.jpg" alt="Wildlife Safari Adventure" class="package-image">
+                    <div class="package-content">
+                        <h3>Kilimanjaro Trekking Expedition</h3>
+                        <p>Challenge yourself with a guided trek to the roof of Africa, with all logistics and support included.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>7 days / 6 nights</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Experienced mountain guides</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>All camping equipment</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Porters and cook included</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>All meals on the mountain</span>
+                            </div>
+                        </div>
+                        <div class="package-price"></div>
+                        <a href="booking.html" class="btn btn-primary">Book This Package</a>
+                    </div>
+                </div>
+                
+                <div class="card package-card fade-in">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80');"></div>
+                    <div class="package-content">
+                        <h3>Northern Circuit Safari</h3>
+                        <p>Comprehensive safari covering Serengeti, Ngorongoro, Lake Manyara, and Tarangire National Parks.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>7 days / 6 nights</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Four national parks</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Lodge and camp accommodation</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Professional safari guide</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>All meals included</span>
+                            </div>
+                        </div>
+                        <div class="package-price"></div>
+                        <a href="booking.html" class="btn btn-primary">Book This Package</a>
+                    </div>
+                </div>
+                
+                <div class="card package-card fade-in">
+                    <div class="package-badge">
+                        <span class="badge badge-primary">Cultural</span>
+                    </div>
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80');"></div>
+                    <div class="package-content">
+                        <h3>Cultural Heritage Tour</h3>
+                        <p>Immerse yourself in Tanzania's rich cultural heritage with visits to historical sites and local communities.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>5 days / 4 nights</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Historical site visits</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Local community interactions</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Traditional meals</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Cultural performances</span>
+                            </div>
+                        </div>
+                        <div class="package-price"></div>
+                        <a href="booking.html" class="btn btn-primary">Book This Package</a>
+                    </div>
+                </div>
+                
+                <div class="card package-card fade-in">
+                    <div class="package-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="package-content">
+                        <h3>Family Adventure Package</h3>
+                        <p>Perfect family vacation with child-friendly activities, comfortable accommodation, and flexible scheduling.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>6 days / 5 nights</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Family-friendly lodges</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Child-focused activities</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Flexible itinerary</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>All meals included</span>
+                            </div>
+                        </div>
+                        <div class="package-price"></div>
+                        <a href="booking.html" class="btn btn-primary">Book This Package</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REDESIGNED Package Categories Section -->
+    <section class="section package-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Top Tanzania Safaris Packages</h2>
+                <p>Explore our most popular safari packages, each offering unique experiences and unforgettable adventures in Tanzania.</p>
+            </div>
+            <div class="categories-grid">
+                <!-- Category 1 -->
+                <div class="card category-card fade-in" onclick="toggleCategory(this)">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="category-overlay">
+                            <h3 class="category-title">10 Days in Northern Tanzania</h3>
+                        </div>
+                        <span class="category-badge">Premium Safari</span>
+                    </div>
+                    <div class="category-content">
+                        <p class="category-description">
+                            An unforgettable 10-day adventure through Tanzania's most iconic northern safari circuit. Explore Serengeti, Ngorongoro Crater, Tarangire, and Lake Manyara with expert guides and luxury accommodations.
+                        </p>
+                        
+                        <div class="category-details">
+                            <div class="category-detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span><strong>Duration:</strong> 10 Days / 9 Nights</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Destinations:</strong> Serengeti, Ngorongoro, Tarangire, Lake Manyara</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-bed"></i>
+                                <span><strong>Accommodation:</strong> Luxury Lodges & Tented Camps</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-utensils"></i>
+                                <span><strong>Meals:</strong> All meals included</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-car"></i>
+                                <span><strong>Transport:</strong> 4x4 Safari Vehicle with Pop-up Roof</span>
+                            </div>
+                        </div>
+                        
+                        <div class="category-cta">
+                            <button class="expand-btn">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <a href="booking.html" class="btn btn-primary btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="card category-card fade-in" onclick="toggleCategory(this)">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="category-overlay">
+                            <h3 class="category-title">8 Days – Luxury Tented Camp Safaris</h3>
+                        </div>
+                        <span class="category-badge">Luxury Experience</span>
+                    </div>
+                    <div class="category-content">
+                        <p class="category-description">
+                            Experience the wild in ultimate comfort with our 8-day luxury tented camp safari. Enjoy premium amenities, gourmet dining, and exclusive game viewing in Tanzania's prime wildlife areas.
+                        </p>
+                        
+                        <div class="category-details">
+                            <div class="category-detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span><strong>Duration:</strong> 8 Days / 7 Nights</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Destinations:</strong> Serengeti & Ngorongoro Conservation Area</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-bed"></i>
+                                <span><strong>Accommodation:</strong> Luxury Tented Camps</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-utensils"></i>
+                                <span><strong>Meals:</strong> Full Board (Breakfast, Lunch, Dinner)</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-binoculars"></i>
+                                <span><strong>Activities:</strong> Game Drives, Night Safaris, Bush Dining</span>
+                            </div>
+                        </div>
+                        
+                        <div class="category-cta">
+                            <button class="expand-btn">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <a href="booking.html" class="btn btn-primary btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="card category-card fade-in" onclick="toggleCategory(this)">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1589553409327-1d81bb13c68d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="category-overlay">
+                            <h3 class="category-title">Tanzania and Zanzibar 18 Days</h3>
+                        </div>
+                        <span class="category-badge">Best Seller</span>
+                    </div>
+                    <div class="category-content">
+                        <p class="category-description">
+                            The ultimate Tanzanian experience combining wildlife safaris with tropical paradise. 18 days of adventure from the Serengeti plains to Zanzibar's white sandy beaches and historic Stone Town.
+                        </p>
+                        
+                        <div class="category-details">
+                            <div class="category-detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span><strong>Duration:</strong> 18 Days / 17 Nights</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Destinations:</strong> Serengeti, Ngorongoro, Tarangire, Zanzibar</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-bed"></i>
+                                <span><strong>Accommodation:</strong> Safari Lodges & Beach Resort</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-utensils"></i>
+                                <span><strong>Meals:</strong> Most meals included</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-sun"></i>
+                                <span><strong>Highlights:</strong> Great Migration, Spice Tour, Snorkeling, Stone Town</span>
+                            </div>
+                        </div>
+                        
+                        <div class="category-cta">
+                            <button class="expand-btn">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <a href="booking.html" class="btn btn-primary btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 4 -->
+                <div class="card category-card fade-in" onclick="toggleCategory(this)">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="category-overlay">
+                            <h3 class="category-title">9 Days Serengeti Migration Safari</h3>
+                        </div>
+                        <span class="category-badge">Wildlife Spectacle</span>
+                    </div>
+                    <div class="category-content">
+                        <p class="category-description">
+                            Witness one of nature's greatest spectacles - the Great Wildebeest Migration. This 9-day safari focuses on the Serengeti ecosystem during peak migration seasons for maximum wildlife viewing.
+                        </p>
+                        
+                        <div class="category-details">
+                            <div class="category-detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span><strong>Duration:</strong> 9 Days / 8 Nights</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Destinations:</strong> Serengeti National Park</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-bed"></i>
+                                <span><strong>Accommodation:</strong> Mobile Tented Camps</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-utensils"></i>
+                                <span><strong>Meals:</strong> Full Board in the bush</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-bullseye"></i>
+                                <span><strong>Best Time:</strong> Dec-Jul (Migration dependent)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="category-cta">
+                            <button class="expand-btn">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <a href="booking.html" class="btn btn-primary btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 5 -->
+                <div class="card category-card fade-in" onclick="toggleCategory(this)">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="category-overlay">
+                            <h3 class="category-title">11-Days Luxury Safari Kenya – Tanzania</h3>
+                        </div>
+                        <span class="category-badge">Cross-Border</span>
+                    </div>
+                    <div class="category-content">
+                        <p class="category-description">
+                            An exclusive 11-day luxury safari crossing two countries. Experience the best of Kenya's Masai Mara and Tanzania's Serengeti with seamless border crossings and premium accommodations.
+                        </p>
+                        
+                        <div class="category-details">
+                            <div class="category-detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span><strong>Duration:</strong> 11 Days / 10 Nights</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Destinations:</strong> Masai Mara (Kenya), Serengeti, Ngorongoro (Tanzania)</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-bed"></i>
+                                <span><strong>Accommodation:</strong> 5-Star Lodges & Luxury Camps</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-utensils"></i>
+                                <span><strong>Meals:</strong> Gourmet dining included</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-passport"></i>
+                                <span><strong>Visa:</strong> East Africa Tourist Visa available</span>
+                            </div>
+                        </div>
+                        
+                        <div class="category-cta">
+                            <button class="expand-btn">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <a href="booking.html" class="btn btn-primary btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category 6 -->
+                <div class="card category-card fade-in" onclick="toggleCategory(this)">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1551085254-e96b210db58a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="category-overlay">
+                            <h3 class="category-title">Bird Watching Safaris in Tanzania – 12 Days</h3>
+                        </div>
+                        <span class="category-badge">Specialized</span>
+                    </div>
+                    <div class="category-content">
+                        <p class="category-description">
+                            A birder's paradise! This 12-day specialized safari focuses on Tanzania's incredible birdlife with expert ornithologist guides. Perfect for both casual bird watchers and serious enthusiasts.
+                        </p>
+                        
+                        <div class="category-details">
+                            <div class="category-detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span><strong>Duration:</strong> 12 Days / 11 Nights</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Destinations:</strong> Lake Manyara, Tarangire, Ngorongoro, Serengeti</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-bed"></i>
+                                <span><strong>Accommodation:</strong> Eco-Lodges & Specialized Camps</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-utensils"></i>
+                                <span><strong>Meals:</strong> All meals included</span>
+                            </div>
+                            <div class="category-detail-item">
+                                <i class="fas fa-binoculars"></i>
+                                <span><strong>Equipment:</strong> High-quality binoculars and bird guides provided</span>
+                            </div>
+                        </div>
+                        
+                        <div class="category-cta">
+                            <button class="expand-btn">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <a href="booking.html" class="btn btn-primary btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TripAdvisor Review Section -->
+    <section class="tripadvisor-review-section">
+        <div class="container">
+            <div class="tripadvisor-content">
+                <!-- Background Image Container -->
+                <div class="review-background-image" style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+                    background-size: cover;
+                    background-position: center;
+                    opacity: 0.15;
+                    border-radius: var(--radius);
+                    z-index: 0;
+                "></div>
+                
+                <div class="tripadvisor-text" style="position: relative; z-index: 1;">
+                    <h3>Share Your Safari Experience</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.7;">Help fellow travelers discover the amazing safari adventures we provide. Your honest review inspires others and helps us continue delivering exceptional, unforgettable experiences in the heart of Tanzania.</p>
+                    <div class="review-cta">
+                        <a href="https://www.tripadvisor.com/UserReview" target="_blank" class="btn btn-primary" style="
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 0.75rem;
+                        ">
+                            <i class="fas fa-pencil-alt"></i>
+                            Write Your Review
+                        </a>
+                    </div>
+                </div>
+                <div class="tripadvisor-logo-container" style="position: relative; z-index: 1;">
+                    <a href="https://www.tripadvisor.com/UserReview" target="_blank" class="tripadvisor-logo">
+                        <div style="
+                            background: white;
+                            padding: 1.5rem;
+                            border-radius: var(--radius);
+                            box-shadow: var(--shadow);
+                            margin-bottom: 1rem;
+                        ">
+                            <img src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg" alt="TripAdvisor Logo" class="tripadvisor-logo-img" style="width: 140px;">
+                        </div>
+                        <div class="tripadvisor-stars" style="
+                            font-size: 1.5rem;
+                            margin-bottom: 0.5rem;
+                            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                        ">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div style="
+                            background: var(--primary);
+                            color: white;
+                            padding: 0.5rem 1.5rem;
+                            border-radius: 50px;
+                            font-weight: 700;
+                            font-size: 1.1rem;
+                            box-shadow: var(--shadow);
+                        ">
+                            4.8/5 Rating
+                        </div>
+                        <p style="
+                            margin-top: 0.75rem;
+                            font-size: 0.9rem;
+                            color: var(--text-muted);
+                            max-width: 200px;
+                        ">
+                            Based on 250+ traveler reviews
+                        </p>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Review Testimonials Section -->
+            <div class="review-testimonials">
+                <div class="testimonial-header">
+                    <h4>What Our Safari Guests Say</h4>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Happy Guest on Safari">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"An unforgettable experience! BISECH made our safari dreams come true. Professional guides and excellent service."</p>
+                            <div class="guest-info">
+                                <span class="guest-name">Sarah Johnson</span>
+                                <span class="guest-location">New York, USA</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Family on Safari">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Perfect family safari! The kids loved every moment. Great accommodation and knowledgeable guides."</p>
+                            <div class="guest-info">
+                                <span class="guest-name">Michael Chen</span>
+                                <span class="guest-location">London, UK</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Couple at Kilimanjaro">
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p>"Kilimanjaro trek was challenging but rewarding. BISECH's team ensured our safety and comfort throughout."</p>
+                            <div class="guest-info">
+                                <span class="guest-name">Maria Rodriguez</span>
+                                <span class="guest-location">Madrid, Spain</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Package Section -->
+    <section class="section custom-package">
+        <div class="container custom-container">
+            <div class="custom-content fade-in">
+                <h2>Customize Your Package</h2>
+                <p>Can't find exactly what you're looking for? Let us create a custom package tailored to your specific interests, budget, and schedule.</p>
+                <div style="margin-top: 2rem;">
+                    <div class="package-feature">
+                        <i class="fas fa-check" style="color: white;"></i>
+                        <span style="color: white;">Personalized itinerary</span>
+                    </div>
+                    <div class="package-feature">
+                        <i class="fas fa-check" style="color: white;"></i>
+                        <span style="color: white;">Flexible dates</span>
+                    </div>
+                    <div class="package-feature">
+                        <i class="fas fa-check" style="color: white;"></i>
+                        <span style="color: white;">Budget options</span>
+                    </div>
+                    <div class="package-feature">
+                        <i class="fas fa-check" style="color: white;"></i>
+                        <span style="color: white;">Special requirements accommodated</span>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-form fade-in">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: white;">Online Inquire</h3>
+                <form id="customPackage" onsubmit="submitCustomPackage(event)">
+                    <div class="form-group">
+                        <label for="customName">Full Name</label>
+                        <input type="text" class="form-control" id="customName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customEmail">Email Address</label>
+                        <input type="email" class="form-control" id="customEmail" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customInterests">Travel Interests</label>
+                        <select class="form-control" id="customInterests">
+                            <option>Wildlife Safari</option>
+                            <option>Beach Holiday</option>
+                            <option>Mountain Climbing</option>
+                            <option>Cultural Experience</option>
+                            <option>Combination</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="customDuration">Preferred Duration</label>
+                        <select class="form-control" id="customDuration">
+                            <option>3-5 days</option>
+                            <option>6-8 days</option>
+                            <option>9-12 days</option>
+                            <option>13+ days</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="customMessage">Special Requirements</label>
+                        <textarea class="form-control" id="customMessage" placeholder="Tell us about your specific requirements..." rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-secondary" style="width: 100%; background: white; color: var(--primary);">Request Custom Quote</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>BISECH Company Limited</h3>
+                    <p>Your trusted partner for tours, car hire, and transportation services in Tanzania. Experience the beauty of Tanzania with our professional and reliable services.</p>
+                    <div class="social-links" style="margin-top: 1.5rem;">
+                        <a href="https://www.facebook.com/share/1GwAJnJiUo/" class="social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bisechtour?igsh=MW9xOGFiZmlocWE1Mg==" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/posts/bisech-tour-company_bisechtour-linkedin-activity-7366071093658374147-ahgq?utm_source=share&utm_medium=member_android&rcm=ACoAAC4UDyYBoYM0egEgsqaYbmTLh40iTWvk2qM" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/255718420969?text=Hello%20BISECH%2C%20I'm%20interested%20in%20your%20services.%20Can%20you%20provide%20more%20information%3F" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Car Hire</a></li>
+                        <li><a href="services.html">Safaris & Tours</a></li>
+                        <li><a href="services.html">Airport Transfers</a></li>
+                        <li><a href="services.html">Cargo Transport</a></li>
+                        <li><a href="packages.html">Tour Packages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="contact.html">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    <p>&copy; 2025 BISECH Company Limited. All rights reserved.</p>
+                </div>
+                <div>
+                    <p>P.O. BOX 34593, DERM PLAZA, 7TH FLOOR MAKUMBUSHO, DAR ES SALAAM KINONDONI</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Form submission handlers
+        function submitCustomPackage(e) {
+            e.preventDefault();
+            alert('Thank you! Your custom package request has been received. We will contact you shortly with a personalized quote.');
+            document.getElementById('customPackage').reset();
+        }
+        
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for fade elements
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+        
+        // Category card expansion functionality
+        function toggleCategory(card) {
+            // If clicking the expand button specifically, don't toggle the card
+            if (event.target.closest('.expand-btn')) {
+                return;
+            }
+            
+            // If clicking the "Book Now" button, don't toggle the card
+            if (event.target.closest('.btn-primary')) {
+                return;
+            }
+            
+            const isExpanded = card.classList.contains('expanded');
+            
+            // Close all other expanded cards
+            document.querySelectorAll('.category-card.expanded').forEach(expandedCard => {
+                if (expandedCard !== card) {
+                    expandedCard.classList.remove('expanded');
+                }
+            });
+            
+            // Toggle current card
+            if (!isExpanded) {
+                card.classList.add('expanded');
+                // Scroll the expanded card into view if needed
+                card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                card.classList.remove('expanded');
+            }
+        }
+        
+        // Expand button functionality
+        document.querySelectorAll('.expand-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent card toggle when clicking button
+                const card = this.closest('.category-card');
+                const isExpanded = card.classList.contains('expanded');
+                
+                // Close all other expanded cards
+                document.querySelectorAll('.category-card.expanded').forEach(expandedCard => {
+                    if (expandedCard !== card) {
+                        expandedCard.classList.remove('expanded');
+                    }
+                });
+                
+                // Toggle current card
+                if (!isExpanded) {
+                    card.classList.add('expanded');
+                    // Scroll the expanded card into view if needed
+                    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    card.classList.remove('expanded');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

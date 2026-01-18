@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BISECH - Premium Tours & Car Hire Services in Tanzania</title>
+    <meta name="description" content="BISECH - Professional car hire, tours, transfers and cargo transport in Tanzania. Experience Tanzania with our premium services.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #228B22;          /* FOREST GREEN - Main color */
+            --primary-light: #32CD32;    /* LimeGreen - Lighter forest green */
+            --primary-dark: #006400;     /* DarkGreen - Darker forest green */
+            --secondary: #f3e9d2;
+            --accent: #c44536;
+            --text: #0f172a;
+            --text-light: #475569;
+            --text-muted: #64748b;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Smooth scrolling animation for the entire page */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animated page sections */
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .section.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced: Staggered animation for cards */
+        .package-card,
+        .service-card,
+        .feature-card,
+        .experience-card {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out, var(--transition);
+        }
+
+        .package-card.animated,
+        .service-card.animated,
+        .feature-card.animated,
+        .experience-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Delay for staggered effect */
+        .package-card:nth-child(1) { transition-delay: 0.1s; }
+        .package-card:nth-child(2) { transition-delay: 0.2s; }
+        .package-card:nth-child(3) { transition-delay: 0.3s; }
+        .package-card:nth-child(4) { transition-delay: 0.4s; }
+
+        .service-card:nth-child(1) { transition-delay: 0.1s; }
+        .service-card:nth-child(2) { transition-delay: 0.2s; }
+        .service-card:nth-child(3) { transition-delay: 0.3s; }
+        .service-card:nth-child(4) { transition-delay: 0.4s; }
+        .service-card:nth-child(5) { transition-delay: 0.5s; }
+        .service-card:nth-child(6) { transition-delay: 0.6s; }
+
+        .feature-card:nth-child(1) { transition-delay: 0.1s; }
+        .feature-card:nth-child(2) { transition-delay: 0.2s; }
+        .feature-card:nth-child(3) { transition-delay: 0.3s; }
+        .feature-card:nth-child(4) { transition-delay: 0.4s; }
+
+        .experience-card:nth-child(1) { transition-delay: 0.1s; }
+        .experience-card:nth-child(2) { transition-delay: 0.2s; }
+        .experience-card:nth-child(3) { transition-delay: 0.3s; }
+        .experience-card:nth-child(4) { transition-delay: 0.4s; }
+        .experience-card:nth-child(5) { transition-delay: 0.5s; }
+        .experience-card:nth-child(6) { transition-delay: 0.6s; }
+        .experience-card:nth-child(7) { transition-delay: 0.7s; }
+        .experience-card:nth-child(8) { transition-delay: 0.8s; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-primary {
+            background: rgba(34, 139, 34, 0.1);  /* Forest green with transparency */
+            color: var(--primary);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-logo {
+            width: 120px;
+            height: auto;
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-desktop ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-desktop a {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-desktop a:hover {
+            color: white;
+        }
+
+        .nav-desktop a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: var(--transition);
+        }
+
+        .nav-desktop a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 0;
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        /* Hero Section - Slideshow */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 600px;
+            overflow: hidden;
+        }
+
+        .slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .slideshow-controls {
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            z-index: 3;
+        }
+
+        .slide-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .slide-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slide-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .slide-nav {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slide-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ENHANCED: Featured Packages Section with Attractive Background */
+        .featured-packages {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            color: white;
+            position: relative;
+        }
+
+        .featured-packages .section-header h2 {
+            color: white;
+        }
+
+        .featured-packages .section-header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .package-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+        }
+
+        .package-image {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .package-content {
+            padding: 1.5rem;
+        }
+
+        /* ENHANCED: Package card text is now black and bold for maximum readability */
+        .package-content h3 {
+            color: #000000; /* Black color */
+            font-weight: 700; /* Bold */
+        }
+
+        .package-content p {
+            color: #000000 !important; /* Black color for maximum contrast */
+            font-weight: 600; /* Semi-bold */
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .package-features {
+            margin: 1.5rem 0;
+        }
+
+        .package-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-feature i {
+            color: var(--accent);
+        }
+
+        /* ENHANCED: Package feature text is also bold and dark */
+        .package-feature span {
+            font-weight: 500;
+            color: #333333; /* Dark gray for good contrast */
+        }
+
+        /* ENHANCED: Services Section with Attractive Background */
+        .services-section {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            color: white;
+            position: relative;
+        }
+
+        .services-section .section-header h2 {
+            color: white;
+        }
+
+        .services-section .section-header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+            height: 320px;
+            transition: var(--transition);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-image {
+            transform: scale(1.05);
+        }
+
+        .service-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(34, 139, 34, 0.9));  /* Forest green overlay */
+            color: white;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-overlay {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(34, 139, 34, 0.95));  /* Forest green overlay - hover */
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .service-overlay h3 {
+            color: white;
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-overlay p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Quick Booking Section */
+        .quick-booking {
+            background: var(--primary);
+            color: white;
+        }
+
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .booking-content h2 {
+            color: white;
+        }
+
+        .booking-content h2:after {
+            background: white;
+        }
+
+        .booking-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: white;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.3);
+        }
+
+        /* ENHANCED: Why Choose Us Section with Attractive Background */
+        .why-choose-us {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80') center/cover no-repeat;
+            color: white;
+            position: relative;
+        }
+
+        .why-choose-us .section-header h2 {
+            color: white;
+        }
+
+        .why-choose-us .section-header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+            height: 320px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.8);
+            transition: transform 0.5s ease;
+            z-index: 1;
+        }
+
+        .feature-card:hover .feature-bg {
+            transform: scale(1.05);
+            filter: brightness(0.9);
+        }
+
+        .feature-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(34, 139, 34, 0.85), rgba(34, 139, 34, 0.95));  /* Forest green overlay */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-overlay {
+            background: linear-gradient(to bottom, rgba(34, 139, 34, 0.9), rgba(0, 100, 0, 0.98));  /* Forest green to dark green */
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: 1.75rem;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-overlay h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-overlay p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* UPDATED: Tanzania Experiences Section - Fixed Design */
+        .tanzania-experiences {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            color: white;
+            position: relative;
+        }
+
+        .tanzania-experiences .section-header h2 {
+            color: white;
+        }
+
+        .tanzania-experiences .section-header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .experiences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .experience-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            text-align: center;
+            height: 280px; /* Fixed height for consistent sizing */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .experience-image-container {
+            flex: 0 0 200px; /* Fixed image container height */
+            overflow: hidden;
+        }
+
+        .experience-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .experience-card:hover .experience-image {
+            transform: scale(1.05);
+        }
+
+        .experience-name {
+            flex: 0 0 80px; /* Fixed name container height */
+            padding: 1rem;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .experience-name h3 {
+            color: var(--text);
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* FIXED: Membership Logos Section - Updated Logo Styling */
+        .membership-section {
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.95), rgba(0, 100, 0, 0.95)), url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .membership-section .section-header h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .membership-section .section-header p {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .membership-logos-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .membership-logos-track {
+            display: flex;
+            animation: scrollLogos 25s linear infinite;
+            gap: 3rem;
+            padding: 0 2rem;
+        }
+
+        @keyframes scrollLogos {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-250px * 3 - 3rem * 3));
+            }
+        }
+
+        .membership-logos-track:hover {
+            animation-play-state: paused;
+        }
+
+        .membership-logo {
+            flex: 0 0 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 2rem 1.5rem;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-align: center;
+            min-height: 200px;
+        }
+
+        .membership-logo:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* FIXED: Logo image container with fixed size */
+        .logo-image {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        /* FIXED: Logo images - all same size, always visible */
+        .logo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            max-width: 90px;
+            max-height: 90px;
+            display: block;
+            opacity: 1 !important; /* Force visibility */
+            visibility: visible !important; /* Force visibility */
+        }
+
+        /* Remove filter effects that were causing logos to disappear */
+        .logo-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+            transition: all 0.3s ease;
+        }
+
+        .membership-logo:hover .logo-name {
+            color: var(--primary-light);
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-links h4:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* WhatsApp Numbers Section */
+        .whatsapp-numbers {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .whatsapp-number {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .whatsapp-number:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .whatsapp-number i {
+            color: #25D366;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .booking-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            
+            .membership-logos-track {
+                animation: scrollLogos 20s linear infinite;
+            }
+            
+            @keyframes scrollLogos {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-220px * 3 - 3rem * 3));
+                }
+            }
+            
+            .membership-logo {
+                flex: 0 0 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .brand-logo {
+                width: 100px;
+            }
+            
+            .company-name {
+                font-size: 1.25rem;
+            }
+            
+            .whatsapp-numbers {
+                flex-direction: column;
+            }
+            
+            .services-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card,
+            .feature-card {
+                height: 300px;
+            }
+            
+            .experiences-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+            
+            .experience-card {
+                height: 250px;
+            }
+            
+            .experience-image-container {
+                flex: 0 0 170px;
+            }
+            
+            .experience-name {
+                flex: 0 0 80px;
+            }
+            
+            .membership-section {
+                padding: 3rem 0;
+            }
+            
+            .membership-logos-track {
+                animation: scrollLogos 15s linear infinite;
+                gap: 2rem;
+            }
+            
+            @keyframes scrollLogos {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-200px * 3 - 2rem * 3));
+                }
+            }
+            
+            .membership-logo {
+                flex: 0 0 200px;
+                padding: 1.5rem 1rem;
+            }
+            
+            .logo-image {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 1rem;
+            }
+            
+            .logo-image img {
+                max-width: 80px;
+                max-height: 80px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .experiences-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                height: 70vh;
+                min-height: 500px;
+            }
+            
+            .brand-logo {
+                width: 90px;
+            }
+            
+            .company-name {
+                font-size: 1.1rem;
+            }
+            
+            .experiences-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+            
+            .experience-card {
+                height: 230px;
+            }
+            
+            .experience-image-container {
+                flex: 0 0 150px;
+            }
+            
+            .experience-name {
+                flex: 0 0 80px;
+                padding: 0.75rem;
+            }
+            
+            .experience-name h3 {
+                font-size: 1rem;
+            }
+            
+            .membership-logos-track {
+                animation: scrollLogos 12s linear infinite;
+                gap: 1.5rem;
+            }
+            
+            @keyframes scrollLogos {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-180px * 3 - 1.5rem * 3));
+                }
+            }
+            
+            .membership-logo {
+                flex: 0 0 180px;
+                padding: 1.25rem 0.75rem;
+                min-height: 180px;
+            }
+            
+            .logo-image {
+                width: 90px;
+                height: 90px;
+                padding: 10px;
+            }
+            
+            .logo-image img {
+                max-width: 70px;
+                max-height: 70px;
+            }
+            
+            .logo-name {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .experiences-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="brand">
+                <a href="index.html">
+                    <img src="image/1.png" alt="BISECH Logo" class="brand-logo">
+                </a>
+                <span class="company-name">BISECH</span>
+            </div>
+
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fleet.html">Fleet</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="booking.html" class="btn btn-secondary">Book Now</a>
+            </nav>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" class="active">Home</a>
+            <a href="services.html">Services</a>
+            <a href="fleet.html">Fleet</a>
+            <a href="packages.html">Packages</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="booking.html" class="btn btn-primary" style="margin-top: 1rem; display: block; text-align: center;">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section with Slideshow -->
+    <section class="hero" id="hero">
+        <div class="slideshow">
+            <!-- Slide 1 - Safari -->
+            <div class="slide active">
+                <img src="image/7 (1).jpg" alt="Tanzania Wildlife" class="slide-bg">
+                <div class="slide-content">
+                    <div class="hero-content">
+                        <span class="badge badge-primary">Safari Adventures</span>
+                        <h1>Experience Tanzania's Wildlife</h1>
+                        <p>Embark on an unforgettable safari adventure through Tanzania's most famous national parks and witness the Big Five in their natural habitat.</p>
+                        <div class="hero-buttons">
+                            <a href="packages.html" class="btn btn-primary btn-large">Explore Safari Packages</a>
+                            <a href="booking.html" class="btn btn-secondary btn-large">Book Your Safari</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 - Flight -->
+            <div class="slide">
+                <img src="image/ndege.JPG" alt="Air Tanzania Flight" class="slide-bg">
+                <div class="slide-content">
+                    <div class="hero-content">
+                        <span class="badge badge-primary">Book Your Flight</span>
+                        <h1>Fly to Amazing Destinations</h1>
+                        <p>Let us arrange your flights to Tanzania's most beautiful destinations. Experience comfort and convenience with our flight booking services.</p>
+                        <div class="hero-buttons">
+                            <a href="services.html" class="btn btn-primary btn-large">Flight Services</a>
+                            <a href="booking.html" class="btn btn-secondary btn-large">Book Your Flight</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 - Car Hire -->
+            <div class="slide">
+                <img src="image/ca2.JPG" alt="Car Hire Services" class="slide-bg">
+                <div class="slide-content">
+                    <div class="hero-content">
+                        <span class="badge badge-primary">Premium Vehicles</span>
+                        <h1>Reliable Car Hire Services</h1>
+                        <p>Choose from our fleet of well-maintained vehicles for your Tanzanian adventure. With or without a driver, we've got you covered.</p>
+                        <div class="hero-buttons">
+                            <a href="fleet.html" class="btn btn-primary btn-large">View Our Fleet</a>
+                            <a href="booking.html" class="btn btn-secondary btn-large">Hire a Car</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 4 - Zanzibar -->
+            <div class="slide">
+                <img src="image/zz.jpg" alt="Zanzibar Beach" class="slide-bg">
+                <div class="slide-content">
+                    <div class="hero-content">
+                        <span class="badge badge-primary">Beach Paradise</span>
+                        <h1>Discover Zanzibar's Beauty</h1>
+                        <p>Experience the pristine beaches, rich history, and vibrant culture of Zanzibar. Your tropical paradise awaits.</p>
+                        <div class="hero-buttons">
+                            <a href="packages.html" class="btn btn-primary btn-large">Zanzibar Packages</a>
+                            <a href="booking.html" class="btn btn-secondary btn-large">Book Zanzibar Trip</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 5 - Mount Kilimanjaro -->
+            <div class="slide">
+                <img src="image/kk.jpg" alt="Mount Kilimanjaro" class="slide-bg">
+                <div class="slide-content">
+                    <div class="hero-content">
+                        <span class="badge badge-primary">Mountain Climbing</span>
+                        <h1>Conquer Mount Kilimanjaro</h1>
+                        <p>Challenge yourself with a trek to the roof of Africa. Experience breathtaking views and the thrill of reaching the summit.</p>
+                        <div class="hero-buttons">
+                            <a href="packages.html" class="btn btn-primary btn-large">Kilimanjaro Packages</a>
+                            <a href="booking.html" class="btn btn-secondary btn-large">Book Your Trek</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slideshow-controls">
+            <button class="slide-nav" id="prevSlide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="slide-dots" id="slideDots">
+                <!-- Dots will be generated by JavaScript -->
+            </div>
+            <button class="slide-nav" id="nextSlide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- ENHANCED: Featured Packages Section with Attractive Background -->
+    <section class="section featured-packages" id="featured-packages">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Packages</h2>
+                <p>Experience the best of Tanzania's local attractions and explore international destinations with our expertly crafted travel packages.</p>
+            </div>
+            <div class="packages-grid">
+                <div class="card package-card">
+                    <img src="image/9.jpg" alt="Wildlife Safari Adventure" class="package-image">
+                    <div class="package-content">
+                        <h3>Wildlife Safari Adventure</h3>
+                        <p><strong>Experience the best of Tanzania's wildlife with visits to Serengeti, Ngorongoro, Lake Manyara, Tarangire, Ruaha, Mikumi, Gombe Stream etc.</strong></p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>1 night / 5 nights</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Game drive in multiple parks</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Tour accommodation</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Professional guide</span>
+                            </div>
+                        </div>
+                        <a href="booking.html" class="btn btn-primary">Book This Package</a>
+                    </div>
+                </div>
+                <div class="card package-card">
+                    <img src="image/zzzz.jpg" alt="Zanzibar Beach Escape" class="package-image">
+                    <div class="package-content">
+                        <h3>Zanzibar Beach Escape</h3>
+                        <p><strong>Relaxing beach stay with spice tours, Stone Town exploration, and snorkeling in pristine waters.</strong></p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>1 night / 3 nights</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Beachfront accommodation</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Spice tour & Stone Town</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Snorkeling trip included</span>
+                            </div>
+                        </div>
+                        <a href="booking.html" class="btn btn-primary">Book This Package</a>
+                    </div>
+                </div>
+                <div class="card package-card">
+                    <img src="image/kilim.jpg" alt="Kilimanjaro Trekking Expedition" class="package-image">
+                    <div class="package-content">
+                        <h3>Kilimanjaro Trekking Expedition</h3>
+                        <p><strong>Challenge yourself with a guided trek to the roof of Africa, with all logistics and support included.</strong></p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>7 days / 6 nights</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Experienced mountain guides</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>All camping equipment</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Equipment, Porter, and Meals included</span>
+                            </div>
+                        </div>
+                        <a href="booking.html" class="btn btn-primary">Book This Package</a>
+                    </div>
+                </div>
+                <div class="card package-card">
+                    <img src="image/IMG_6198.JPG" alt="Wildlife Safari Adventure" class="package-image">
+                    <div class="package-content">
+                        <h3>International Tourism</h3>
+                        <p><strong>Explore global destinations beyond Tanzania. We arrange international tours, flights, and accommodation worldwide for unforgettable global experiences.</strong></p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Custom duration packages</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>International flight bookings</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Visa assistance & support</span>
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Multi-language guides available</span>
+                            </div>
+                        </div>
+                        <a href="booking.html" class="btn btn-primary">Book This Package</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENHANCED: Services Section with Attractive Background -->
+    <section class="section services-section" id="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>We provide a full range of travel and transportation services across Tanzania and internationally with professionalism and reliability.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="image/ca2.JPG" alt="Car Hire Services" class="service-image">
+                    <div class="service-overlay">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Car Hire</h3>
+                        <p>Short-term and long-term vehicle hire with or without driver options. Perfect for business trips, personal travel, and exploration.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="image/ww.jpg" alt="Safari Tours" class="service-image">
+                    <div class="service-overlay">
+                        <div class="service-icon">
+                            <i class="fas fa-binoculars"></i>
+                        </div>
+                        <h3>Safaris & Tours</h3>
+                        <p>Custom safaris, national park visits, mountain climbs, beach holidays and cultural excursions tailored to your preferences.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="image/12.jpg" alt="Airport Transfers" class="service-image">
+                    <div class="service-overlay">
+                        <div class="service-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h3>Airport Transfers</h3>
+                        <p>Reliable pick-up and drop-off services for individuals and groups at all major airports across Tanzania.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cargo Transport" class="service-image">
+                    <div class="service-overlay">
+                        <div class="service-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Cargo Transport</h3>
+                        <p>Secure and timely transportation of different cargos around Tanzania with proper handling and tracking.</p>
+                    </div>
+                </div>
+                <!-- New Service Cards -->
+                <div class="service-card">
+                    <img src="image/Climb-Kili-summit-pic-scaled.jpg" alt="Airport Transfers" class="service-image">
+                    <div class="service-overlay">
+                        <div class="service-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3>Mount Climbing & Beach Holidays</h3>
+                        <p>Combine mountain adventures with relaxing beach holidays for the ultimate Tanzania experience.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="image/aaaaa.jpg" alt="Airport Transfers" class="service-image">
+                    <div class="service-overlay">
+                        <div class="service-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <h3>Air Ticketing</h3>
+                        <p>Domestic and international flight bookings with competitive prices and professional service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Booking Section -->
+    <section class="section quick-booking" id="quick-booking">
+        <div class="container booking-container">
+            <div class="booking-content">
+                <h2>Ready for Your Adventure?</h2>
+                <p style="color: white; font-weight: 500;">Book your Tanzania experience with us today. Our team is ready to help you plan the perfect trip tailored to your preferences.</p>
+                <div style="margin-top: 2rem;">
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: white;">Call Us</h4>
+                            <p style="color: white;">+255 718 420 969 | +255 755 329 432 | +255 757 193 010</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: white;">Email Us</h4>
+                            <p style="color: white;">info@bisech.co.tz</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: white;">Visit Us</h4>
+                            <p style="color: white;">DERM PLAZA, 7TH FLOOR MAKUMBUSHO, DAR ES SALAAM TANZANIA</p>
+                        </div>
+                    </div>
+                    <div class="whatsapp-numbers">
+                        <a href="https://wa.me/255718420969?text=Hello%20BISECH%2C%20I'm%20interested%20in%20your%20services.%20Can%20you%20provide%20more%20information%3F" target="_blank" class="whatsapp-number">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+255 718 420 969</span>
+                        </a>
+                        <a href="https://wa.me/255757193010?text=Hello%20BISECH%2C%20I'm%20interested%20in%20your%20services.%20Can%20you%20provide%20more%20information%3F" target="_blank" class="whatsapp-number">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+255 757 193 010</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="booking-form">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: white;">Quick Booking</h3>
+                <form id="booking" onsubmit="submitBooking(event)">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" id="phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="serviceType">
+                            <option>Car Hire</option>
+                            <option>Airport Transfer</option>
+                            <option>Safari / Tour</option>
+                            <option>Cargo Transport</option>
+                            <option>Mount Climbing & Beach Holidays</option>
+                            <option>Air Ticketing</option>
+                            <option>International Tourism</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                    <button type="submit" class="btn btn-secondary" style="width: 100%; background: white; color: var(--primary);">Request Quote</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENHANCED: Why Choose Us Section with Attractive Background -->
+    <section class="section why-choose-us" id="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose BISECH</h2>
+                <p>We are committed to providing exceptional service and unforgettable experiences for all our clients.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-bg" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="feature-overlay">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Safety First</h3>
+                        <p>Your safety is our top priority. All our vehicles are regularly maintained and our drivers are highly trained.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-bg" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2011&q=80');"></div>
+                    <div class="feature-overlay">
+                        <div class="feature-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3>Best Value</h3>
+                        <p>We offer competitive pricing without compromising on quality, ensuring you get the best value for your money.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-bg" style="background-image: url('https://images.unsplash.com/photo-1587976388348-8cad203d4b43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="feature-overlay">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Expert Guides</h3>
+                        <p>Our experienced guides have extensive knowledge of Tanzania's wildlife, culture, and hidden gems.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-bg" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="feature-overlay">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Our customer support team is available around the clock to assist you with any questions or concerns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPDATED: Tanzania Experiences Section - Fixed Design with 8 cards -->
+    <section class="section tanzania-experiences" id="tanzania-experiences">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tanzania Experiences</h2>
+                <p>Discover the diverse experiences Tanzania has to offer, from wildlife safaris to beach relaxation and mountain adventures.</p>
+            </div>
+            <div class="experiences-grid">
+                <div class="experience-card">
+                    <!-- Add your own image here -->
+                    <div class="experience-image-container">
+                        <img src="image/IMG_5180.JPG" alt="Tourism" class="experience-image">
+                    </div>
+                    <div class="experience-name">
+                        <h3>Tourism</h3>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <!-- Add your own image here -->
+                    <div class="experience-image-container">
+                        <img src="image/9 (1).jpg" alt="Hotels" class="experience-image">
+                    </div>
+                    <div class="experience-name">
+                        <h3>Hotels</h3>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <!-- Add your own image here -->
+                    <div class="experience-image-container">
+                        <img src="image/zz.jpg" alt="Beach" class="experience-image">
+                    </div>
+                    <div class="experience-name">
+                        <h3>Beach</h3>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <!-- Add your own image here -->
+                    <div class="experience-image-container">
+                        <img src="image/Climb-Kili-summit-pic-scaled.jpg" alt="Mount Climbing" class="experience-image">
+                    </div>
+                    <div class="experience-name">
+                        <h3>Mount Climbing</h3>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <!-- Add your own image here -->
+                    <div class="experience-image-container">
+                        <img src="image/1 (1).jpg" alt="Wildlife" class="experience-image">
+                    </div>
+                    <div class="experience-name">
+                        <h3>Wildlife</h3>
+                    </div>
+                </div>
+                <!-- New Cards Added -->
+                <div class="experience-card">
+                    <!-- Add your own image here -->
+                    <div class="experience-image-container">
+                        <img src="image/mmmm.jpg" alt="Culture" class="experience-image">
+                    </div>
+                    <div class="experience-name">
+                        <h3>Culture</h3>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <!-- Add your own image here -->
+                    <div class="experience-image-container">
+                        <img src="image/4.JPG" alt="Adventure" class="experience-image">
+                    </div>
+                    <div class="experience-name">
+                        <h3>Adventure</h3>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <!-- Add your own image here -->
+                    <div class="experience-image-container">
+                        <img src="image/IMG_7180.JPG" alt="Relaxation" class="experience-image">
+                    </div>
+                    <div class="experience-name">
+                        <h3>Relaxation</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FIXED: Membership Logos Section -->
+    <section class="section membership-section" id="membership">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Memberships & Affiliations</h2>
+                <p>We are proud members and partners of leading tourism organizations in Tanzania</p>
+            </div>
+            
+            <div class="membership-logos-container">
+                <div class="membership-logos-track">
+                    <!-- Logo 1: Tanzania National Parks -->
+                    <a href="https://www.tanzaniaparks.go.tz/" target="_blank" class="membership-logo">
+                        <div class="logo-image">
+                            <img src="image/tp.jpeg" alt="Tanzania National Parks">
+                        </div>
+                        <div class="logo-name">
+                            <span>TANZANIA NATIONAL PARKS</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Logo 2: Tanzania Tourist Board -->
+                    <a href="https://www.tanzaniatourism.go.tz/" target="_blank" class="membership-logo">
+                        <div class="logo-image">
+                            <img src="image/tan.png" alt="Tanzania Tourist Board">
+                        </div>
+                        <div class="logo-name">
+                            <span>TANZANIA TOURIST BOARD</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Logo 3: TripAdvisor -->
+                    <a href="https://www.tripadvisor.com/" target="_blank" class="membership-logo">
+                        <div class="logo-image">
+                            <img src="image/tr.png" alt="TripAdvisor">
+                        </div>
+                        <div class="logo-name">
+                            <span>TRIPADVISOR</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Duplicate logos for seamless scrolling -->
+                    <a href="https://www.tanzaniaparks.go.tz/" target="_blank" class="membership-logo">
+                        <div class="logo-image">
+                            <img src="image/tp.jpeg" alt="Tanzania National Parks">
+                        </div>
+                        <div class="logo-name">
+                            <span>TANZANIA NATIONAL PARKS</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.tanzaniatourism.go.tz/" target="_blank" class="membership-logo">
+                        <div class="logo-image">
+                            <img src="image/tan.png" alt="Tanzania Tourist Board">
+                        </div>
+                        <div class="logo-name">
+                            <span>TANZANIA TOURIST BOARD</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.tripadvisor.com/" target="_blank" class="membership-logo">
+                        <div class="logo-image">
+                            <img src="image/tr.png" alt="TripAdvisor">
+                        </div>
+                        <div class="logo-name">
+                            <span>TRIPADVISOR</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>BISECH Company Limited</h3>
+                    <p>Your trusted partner for tours, car hire, and transportation services in Tanzania. Experience the beauty of Tanzania with our professional and reliable services.</p>
+                    <div class="social-links" style="margin-top: 1.5rem;">
+                        <a href="https://www.facebook.com/share/1GwAJnJiUo/" class="social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bisechtour?igsh=MW9xOGFiZmlocWE1Mg==" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/posts/bisech-tour-company_bisechtour-linkedin-activity-7366071093658374147-ahgq?utm_source=share&utm_medium=member_android&rcm=ACoAAC4UDyYBoYM0egEgsqaYbmTLh40iTWvk2qM" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/255718420969?text=Hello%20BISECH%2C%20I'm%20interested%20in%20your%20services.%20Can%20you%20provide%20more%20information%3F" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Car Hire</a></li>
+                        <li><a href="services.html">Safaris & Tours</a></li>
+                        <li><a href="services.html">Airport Transfers</a></li>
+                        <li><a href="services.html">Cargo Transport</a></li>
+                        <li><a href="services.html">Mount Climbing & Beach</a></li>
+                        <li><a href="services.html">Air Ticketing</a></li>
+                        <li><a href="services.html">International Tourism</a></li>
+                        <li><a href="packages.html">Tour Packages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="contact.html">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    <p>&copy; 2025 BISECH Company Limited. All rights reserved.</p>
+                </div>
+                <div>
+                    <p>P.O. BOX 34593, DERM PLAZA, 7TH FLOOR MAKUMBUSHO, DAR ES SALAAM TANZANIA</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Form submission handlers
+        function submitBooking(e) {
+            e.preventDefault();
+            alert('Thank you! Your booking request has been received. We will contact you shortly.');
+            document.getElementById('booking').reset();
+        }
+        
+        // Scroll animation function
+        function animateOnScroll() {
+            const sections = document.querySelectorAll('.section');
+            const cards = document.querySelectorAll('.package-card, .service-card, .feature-card, .experience-card, .membership-logo');
+            
+            // Animate sections
+            sections.forEach(section => {
+                const sectionPosition = section.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (sectionPosition < screenPosition) {
+                    section.classList.add('animated');
+                }
+            });
+            
+            // Animate cards
+            cards.forEach(card => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (cardPosition < screenPosition) {
+                    card.classList.add('animated');
+                }
+            });
+        }
+        
+        // Initial animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Run scroll animation
+            animateOnScroll();
+            
+            // Animate hero section immediately
+            const hero = document.getElementById('hero');
+            if (hero) {
+                hero.style.opacity = '1';
+                hero.style.transform = 'translateY(0)';
+            }
+            
+            // Animate sections after a short delay for better effect
+            setTimeout(() => {
+                animateOnScroll();
+            }, 300);
+            
+            // Pre-load and ensure all logos are visible
+            const logos = document.querySelectorAll('.logo-image img');
+            logos.forEach(logo => {
+                logo.style.opacity = '1';
+                logo.style.visibility = 'visible';
+            });
+        });
+        
+        // Run animation on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Smooth scroll for anchor links with animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only process internal anchor links
+                if (href.startsWith('#') && href !== '#') {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        // Smooth scroll to element
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Trigger animations after scroll
+                        setTimeout(() => {
+                            animateOnScroll();
+                        }, 800);
+                    }
+                }
+            });
+        });
+        
+        // Slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slideDotsContainer = document.getElementById('slideDots');
+        const prevButton = document.getElementById('prevSlide');
+        const nextButton = document.getElementById('nextSlide');
+        
+        // Create dots for each slide
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('slide-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            slideDotsContainer.appendChild(dot);
+        });
+        
+        const dots = document.querySelectorAll('.slide-dot');
+        
+        function goToSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            
+            currentSlide = (n + slides.length) % slides.length;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+        
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+        
+        // Event listeners for navigation
+        nextButton.addEventListener('click', nextSlide);
+        prevButton.addEventListener('click', prevSlide);
+        
+        // Auto-advance slides every 5 seconds
+        let slideInterval = setInterval(nextSlide, 5000);
+        
+        // Pause auto-advancement when user interacts with controls
+        const controls = [prevButton, nextButton, ...dots];
+        controls.forEach(control => {
+            control.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        });
+
+        // Set active link for current page
+        window.addEventListener('load', () => {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav-desktop a, .mobile-menu a');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Ensure all logos are visible on load
+            const logoImages = document.querySelectorAll('.logo-image img');
+            logoImages.forEach(img => {
+                img.style.opacity = '1';
+                img.style.visibility = 'visible';
+            });
+        });
+    </script>
+</body>
+</html>

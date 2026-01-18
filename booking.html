@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now - BISECH Tours & Car Hire</title>
+    <meta name="description" content="Book your Tanzania adventure with BISECH. Easy online booking for tours, car hire, and transportation services.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Updated CSS with FOREST GREEN colors matching the home page */
+        :root {
+            --primary: #228B22;          /* FOREST GREEN - Main color */
+            --primary-light: #32CD32;    /* LimeGreen - Lighter forest green */
+            --primary-dark: #006400;     /* DarkGreen - Darker forest green */
+            --secondary: #f3e9d2;        /* Cream/beige from poster */
+            --accent: #c44536;           /* Warm red accent */
+            --text: #0f172a;             /* Dark text */
+            --text-light: #475569;       /* Medium text */
+            --text-muted: #64748b;       /* Muted text */
+            --bg: #f8fafc;               /* Light background */
+            --card: #ffffff;             /* Card background */
+            --border: #e2e8f0;           /* Border color */
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-primary {
+            background: rgba(34, 139, 34, 0.1);  /* Forest green with transparency */
+            color: var(--primary);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-logo {
+            width: 120px;
+            height: auto;
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-desktop ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-desktop a {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-desktop a:hover {
+            color: white;
+        }
+
+        .nav-desktop a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: var(--transition);
+        }
+
+        .nav-desktop a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 0;
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(34, 139, 34, 0.8), rgba(34, 139, 34, 0.9)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Booking Form - REDESIGNED SECTION */
+        .booking-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .booking-form-card {
+            padding: 2.5rem;
+        }
+
+        .booking-summary-card {
+            padding: 2rem;
+            background: rgba(34, 139, 34, 0.05);  /* Forest green with low opacity */
+            align-self: start;
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .form-group label.required:after {
+            content: ' *';
+            color: var(--accent);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: white;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.15);  /* Forest green shadow */
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .form-section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 2rem;
+        }
+
+        .form-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: 1.35rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .form-section h3 i {
+            font-size: 1.2rem;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--primary);
+        }
+
+        /* Booking Steps */
+        .booking-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .booking-steps:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border);
+            z-index: 1;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--border);
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .step.active .step-number {
+            background: var(--primary);
+            color: white;
+        }
+
+        .step-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .step.active .step-label {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Form Action Buttons - REDESIGNED */
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .form-actions .btn {
+            flex: 1;
+            padding: 0.85rem 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* Additional Help Section */
+        .additional-help {
+            background: rgba(34, 139, 34, 0.05);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .additional-help h4 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .additional-help p {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        /* Footer - KEEPING ORIGINAL COLOR (#0f172a) */
+        footer {
+            background: #0f172a; /* Original footer color - KEEPING THIS */
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-links h4:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--secondary);
+            color: var(--text);
+            transform: translateY(-3px);
+        }
+
+        /* WhatsApp Numbers Section */
+        .whatsapp-numbers {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .whatsapp-number {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .whatsapp-number:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .whatsapp-number i {
+            color: #25D366;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .booking-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .booking-steps {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .booking-steps:before {
+                display: none;
+            }
+            
+            .brand-logo {
+                width: 100px;
+            }
+            
+            .company-name {
+                font-size: 1.25rem;
+            }
+            
+            .whatsapp-numbers {
+                flex-direction: column;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .booking-form-card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .brand-logo {
+                width: 90px;
+            }
+            
+            .company-name {
+                font-size: 1.1rem;
+            }
+            
+            .booking-form-card {
+                padding: 1.25rem;
+            }
+            
+            .form-section h3 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="brand">
+                <a href="index.html">
+                    <img src="image/1.png" alt="BISECH Logo" class="brand-logo">
+                </a>
+                <span class="company-name">BISECH</span>
+            </div>
+
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fleet.html">Fleet</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="booking.html" class="btn btn-secondary" style="color: white; background: rgba(255,255,255,0.2);">Book Now</a>
+            </nav>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="fleet.html">Fleet</a>
+            <a href="packages.html">Packages</a>
+            <a href="contact.html">Contact</a>
+            <a href="booking.html" class="btn btn-primary" style="margin-top: 1rem; display: block; text-align: center;">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Book Your Adventure</h1>
+            <p>Secure your Tanzania experience with our easy online booking system. Fill out the form below and we'll confirm your booking shortly.</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="section">
+        <div class="container">
+            <div class="booking-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Service Details</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Personal Info</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Payment</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Confirmation</div>
+                </div>
+            </div>
+
+            <div class="booking-container">
+                <div class="booking-form-card card fade-in">
+                    <h2>Booking Form</h2>
+                    <p>Please fill out all required information to complete your booking. Fields marked with * are required.</p>
+                    
+                    <form id="bookingForm" onsubmit="submitBookingForm(event)">
+                        <!-- Service Details -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-concierge-bell"></i> Service Details</h3>
+                            
+                            <div class="form-group">
+                                <label for="serviceType" class="required">Service Type</label>
+                                <select class="form-control" id="serviceType" required>
+                                    <option value="">Select a service</option>
+                                    <option value="car-hire">Car Hire</option>
+                                    <option value="safari">Safari / Tour</option>
+                                    <option value="airport-transfer">Airport Transfer</option>
+                                    <option value="cargo-transport">Cargo Transport</option>
+                                    <option value="custom-package">Custom Package</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="startDate" class="required">Start Date</label>
+                                    <input type="date" class="form-control" id="startDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="endDate" class="required">End Date</label>
+                                    <input type="date" class="form-control" id="endDate" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="packageSelection">Package Selection</label>
+                                    <select class="form-control" id="packageSelection">
+                                        <option value="">Select a package (optional)</option>
+                                        <option value="wildlife-safari">Wildlife Safari Adventure</option>
+                                        <option value="zanzibar-escape">Zanzibar Beach Escape</option>
+                                        <option value="kilimanjaro-trek">Kilimanjaro Trekking Expedition</option>
+                                        <option value="northern-circuit">Northern Circuit Safari</option>
+                                        <option value="cultural-tour">Cultural Heritage Tour</option>
+                                        <option value="family-adventure">Family Adventure Package</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vehicleType">Vehicle Type</label>
+                                    <select class="form-control" id="vehicleType">
+                                        <option value="">Select a vehicle (optional)</option>
+                                        <option value="land-cruiser">Toyota Land Cruiser</option>
+                                        <option value="hiace">Toyota Hiace</option>
+                                        <option value="pickup">Pickup Truck</option>
+                                        <option value="sedan">Executive Sedan</option>
+                                        <option value="suv">Family SUV</option>
+                                        <option value="cargo-van">Cargo Van</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="adults" class="required">Number of Adults</label>
+                                    <input type="number" class="form-control" id="adults" min="1" max="20" value="1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="children">Number of Children</label>
+                                    <input type="number" class="form-control" id="children" min="0" max="20" value="0">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-user-circle"></i> Personal Information</h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" class="required">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="Your first name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" class="required">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="Your last name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email" class="required">Email Address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="your.email@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="required">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="+255 XXX XXX XXX" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nationality" class="required">Nationality</label>
+                                    <input type="text" class="form-control" id="nationality" placeholder="Your nationality" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input type="text" class="form-control" id="address" placeholder="Your current address">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Special Requirements -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-clipboard-check"></i> Special Requirements</h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="dietary">Dietary Requirements</label>
+                                    <input type="text" class="form-control" id="dietary" placeholder="Vegetarian, allergies, etc.">
+                                </div>
+                                <div class="form-group">
+                                    <label for="medical">Medical Conditions</label>
+                                    <input type="text" class="form-control" id="medical" placeholder="Any medical conditions to note">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="specialRequests">Special Requests</label>
+                                <textarea class="form-control" id="specialRequests" placeholder="Any special requests, preferences, or additional information you'd like us to know..." rows="4"></textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional Help Section -->
+                        <div class="additional-help">
+                            <h4><i class="fas fa-question-circle"></i> Need Assistance?</h4>
+                            <p>If you have any questions or need help filling out this form, please contact our booking team:</p>
+                            <p><i class="fas fa-phone"></i> +255 718 420 969</p>
+                            <p><i class="fas fa-envelope"></i> bookings@bisech.co.tz</p>
+                        </div>
+                        
+                        <!-- Form Actions - REDESIGNED BUTTONS -->
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="resetForm()">
+                                <i class="fas fa-redo"></i> Reset Form
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Submit Booking Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="booking-summary-card card fade-in">
+                    <h3>Booking Summary</h3>
+                    <p>Your booking details will appear here once you fill out the form.</p>
+                    
+                    <div class="summary-item">
+                        <span>Service:</span>
+                        <span id="summary-service">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Duration:</span>
+                        <span id="summary-duration">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Travelers:</span>
+                        <span id="summary-travelers">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Vehicle:</span>
+                        <span id="summary-vehicle">-</span>
+                    </div>
+                    
+                    <div class="summary-total">
+                        <span>Estimated Total:</span>
+                        <span id="summary-total">-</span>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                        <h4><i class="fas fa-info-circle"></i> What Happens Next?</h4>
+                        <p style="font-size: 0.9rem;">After submitting your request:</p>
+                        <ul style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.5rem; padding-left: 1.2rem;">
+                            <li style="margin-bottom: 0.4rem;">We'll contact you within 24 hours</li>
+                            <li style="margin-bottom: 0.4rem;">Confirm availability and pricing</li>
+                            <li style="margin-bottom: 0.4rem;">Provide payment instructions</li>
+                            <li>Send final confirmation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>BISECH Company Limited</h3>
+                    <p>Your trusted partner for tours, car hire, and transportation services in Tanzania. Experience the beauty of Tanzania with our professional and reliable services.</p>
+                    <div class="social-links" style="margin-top: 1.5rem;">
+                        <a href="https://www.facebook.com/share/1GwAJnJiUo/" class="social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bisechtour?igsh=MW9xOGFiZmlocWE1Mg==" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/posts/bisech-tour-company_bisechtour-linkedin-activity-7366071093658374147-ahgq?utm_source=share&utm_medium=member_android&rcm=ACoAAC4UDyYBoYM0egEgsqaYbmTLh40iTWvk2qM" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/255718420969?text=Hello%20BISECH%2C%20I'm%20interested%20in%20your%20services.%20Can%20you%20provide%20more%20information%3F" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Car Hire</a></li>
+                        <li><a href="services.html">Safaris & Tours</a></li>
+                        <li><a href="services.html">Airport Transfers</a></li>
+                        <li><a href="services.html">Cargo Transport</a></li>
+                        <li><a href="packages.html">Tour Packages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="contact.html">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    <p>&copy; 2025 BISECH Company Limited. All rights reserved.</p>
+                </div>
+                <div>
+                    <p>P.O. BOX 34593, DERM PLAZA, 7TH FLOOR MAKUMBUSHO, DAR ES SALAAM KINONDONI</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Form submission handler
+        function submitBookingForm(e) {
+            e.preventDefault();
+            alert('Thank you! Your booking request has been received. We will contact you within 24 hours to confirm your booking and provide payment details.');
+            document.getElementById('bookingForm').reset();
+            updateBookingSummary();
+        }
+        
+        // Reset form function
+        function resetForm() {
+            if (confirm('Are you sure you want to reset the form? All entered data will be lost.')) {
+                document.getElementById('bookingForm').reset();
+                updateBookingSummary();
+            }
+        }
+        
+        // Update booking summary
+        function updateBookingSummary() {
+            const serviceType = document.getElementById('serviceType').value;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const adults = document.getElementById('adults').value;
+            const children = document.getElementById('children').value;
+            const vehicleType = document.getElementById('vehicleType').value;
+            
+            // Update summary fields
+            document.getElementById('summary-service').textContent = serviceType ? formatServiceType(serviceType) : '-';
+            document.getElementById('summary-duration').textContent = (startDate && endDate) ? calculateDuration(startDate, endDate) : '-';
+            document.getElementById('summary-travelers').textContent = `${adults} adults${children > 0 ? `, ${children} children` : ''}`;
+            document.getElementById('summary-vehicle').textContent = vehicleType ? formatVehicleType(vehicleType) : '-';
+            
+            // Calculate and display estimated total
+            const estimatedTotal = calculateEstimatedTotal(serviceType, startDate, endDate, adults, children, vehicleType);
+            document.getElementById('summary-total').textContent = estimatedTotal;
+        }
+        
+        // Helper functions for booking summary
+        function formatServiceType(service) {
+            const services = {
+                'car-hire': 'Car Hire',
+                'safari': 'Safari / Tour',
+                'airport-transfer': 'Airport Transfer',
+                'cargo-transport': 'Cargo Transport',
+                'custom-package': 'Custom Package'
+            };
+            return services[service] || service;
+        }
+        
+        function formatVehicleType(vehicle) {
+            const vehicles = {
+                'land-cruiser': 'Toyota Land Cruiser',
+                'hiace': 'Toyota Hiace',
+                'pickup': 'Pickup Truck',
+                'sedan': 'Executive Sedan',
+                'suv': 'Family SUV',
+                'cargo-van': 'Cargo Van'
+            };
+            return vehicles[vehicle] || vehicle;
+        }
+        
+        function calculateDuration(startDate, endDate) {
+            const start = new Date(startDate);
+            const end = new Date(endDate);
+            const diffTime = Math.abs(end - start);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays === 1 ? '1 day' : `${diffDays} days`;
+        }
+        
+        function calculateEstimatedTotal(serviceType, startDate, endDate, adults, children, vehicleType) {
+            // This is a simplified calculation for demonstration
+            // In a real application, this would connect to a pricing system
+            if (!serviceType || !startDate || !endDate) return 'TZS 0';
+            
+            const start = new Date(startDate);
+            const end = new Date(endDate);
+            const diffTime = Math.abs(end - start);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            let baseRate = 0;
+            switch(serviceType) {
+                case 'car-hire':
+                    baseRate = 150000; // TZS per day
+                    break;
+                case 'safari':
+                    baseRate = 350000; // TZS per person per day
+                    break;
+                case 'airport-transfer':
+                    baseRate = 50000; // TZS per transfer
+                    break;
+                case 'cargo-transport':
+                    baseRate = 200000; // TZS per day
+                    break;
+                case 'custom-package':
+                    baseRate = 400000; // TZS per person per day
+                    break;
+                default:
+                    baseRate = 0;
+            }
+            
+            let total = 0;
+            if (serviceType === 'safari' || serviceType === 'custom-package') {
+                total = baseRate * diffDays * (parseInt(adults) + parseInt(children) * 0.5);
+            } else {
+                total = baseRate * (serviceType === 'airport-transfer' ? 1 : diffDays);
+            }
+            
+            // Add currency formatting
+            return `TZS ${total.toLocaleString()}`;
+        }
+        
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('startDate').min = today;
+        
+        // Update end date minimum when start date changes
+        document.getElementById('startDate').addEventListener('change', function() {
+            document.getElementById('endDate').min = this.value;
+        });
+        
+        // Add event listeners to update summary when form changes
+        document.getElementById('serviceType').addEventListener('change', updateBookingSummary);
+        document.getElementById('startDate').addEventListener('change', updateBookingSummary);
+        document.getElementById('endDate').addEventListener('change', updateBookingSummary);
+        document.getElementById('adults').addEventListener('change', updateBookingSummary);
+        document.getElementById('children').addEventListener('change', updateBookingSummary);
+        document.getElementById('vehicleType').addEventListener('change', updateBookingSummary);
+        
+        // Initialize booking summary
+        updateBookingSummary();
+        
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for fade elements
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+    </script>
+</body>
+</html>

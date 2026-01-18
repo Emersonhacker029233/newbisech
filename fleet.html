@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Fleet - BISECH Tours & Car Hire</title>
+    <meta name="description" content="Explore our modern, well-maintained fleet of vehicles perfect for city transfers and rugged safaris across Tanzania.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #228B22;          /* FOREST GREEN - Main color */
+            --primary-light: #32CD32;    /* LimeGreen - Lighter forest green */
+            --primary-dark: #006400;     /* DarkGreen - Darker forest green */
+            --secondary: #f3e9d2;
+            --accent: #c44536;
+            --text: #0f172a;
+            --text-light: #475569;
+            --text-muted: #64748b;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-primary {
+            background: rgba(34, 139, 34, 0.1);  /* Forest green with transparency */
+            color: var(--primary);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-logo {
+            width: 120px;
+            height: auto;
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-desktop ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-desktop a {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-desktop a:hover {
+            color: white;
+        }
+
+        .nav-desktop a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: var(--transition);
+        }
+
+        .nav-desktop a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 0;
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1592841200221-7ef6f5c78c6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Fleet Grid */
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .fleet-card {
+            overflow: hidden;
+        }
+
+        .fleet-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .fleet-content {
+            padding: 1.5rem;
+        }
+
+        .fleet-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .feature i {
+            color: var(--primary);
+        }
+
+        .vehicle-type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(34, 139, 34, 0.1);  /* Forest green with transparency */
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* ENHANCED Fleet Categories Section - Designed like Tanzania Safari Screenshot */
+        .fleet-categories {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat fixed;
+            color: white;
+            position: relative;
+        }
+
+        .fleet-categories:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(34, 139, 34, 0.3), rgba(196, 69, 54, 0.3));
+            z-index: 0;
+        }
+
+        .fleet-categories .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .fleet-categories .section-header h2 {
+            color: white;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .fleet-categories .section-header h2:after {
+            background: white;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+        }
+
+        .fleet-categories .section-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 600px;
+            font-weight: 400;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: height 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-card:hover:before {
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .category-icon {
+            width: 90px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2.5rem;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover .category-icon {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .category-card h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-highlight {
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            right: 0;
+            text-align: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .category-card:hover .category-highlight {
+            opacity: 1;
+        }
+
+        .category-highlight .btn {
+            background: white;
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .category-highlight .btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Title Decoration */
+        .section-title-decoration {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-title-decoration span {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(196, 69, 54, 0.3);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+        }
+
+        .cta-section h2:after {
+            background: white;
+        }
+
+        .cta-section p {
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-links h4:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* WhatsApp Numbers Section */
+        .whatsapp-numbers {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .whatsapp-number {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .whatsapp-number:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .whatsapp-number i {
+            color: #25D366;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .brand-logo {
+                width: 100px;
+            }
+            
+            .company-name {
+                font-size: 1.25rem;
+            }
+            
+            .whatsapp-numbers {
+                flex-direction: column;
+            }
+            
+            .category-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .category-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .fleet-grid,
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .brand-logo {
+                width: 90px;
+            }
+            
+            .company-name {
+                font-size: 1.1rem;
+            }
+            
+            .category-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .fleet-categories .section-header h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="brand">
+                <a href="index.html">
+                    <img src="image/1.png" alt="BISECH Logo" class="brand-logo">
+                </a>
+                <span class="company-name">BISECH</span>
+            </div>
+
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fleet.html" style="color: white;">Fleet</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="booking.html" class="btn btn-secondary">Book Now</a>
+            </nav>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="fleet.html" style="color: white;">Fleet</a>
+            <a href="packages.html">Packages</a>
+            <a href="contact.html">Contact</a>
+            <a href="booking.html" class="btn btn-primary" style="margin-top: 1rem; display: block; text-align: center;">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Fleet</h1>
+            <p>Modern, well-maintained vehicles suitable for city transfers and rugged safaris across Tanzania's diverse terrain.</p>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Vehicle Selection</h2>
+                <p>Choose from our diverse range of vehicles, each maintained to the highest standards for your comfort and safety.</p>
+            </div>
+            <div class="fleet-grid">
+                <div class="card fleet-card fade-in">
+                    <img src="image/1.JPG" alt="Wildlife Safari Adventure" class="package-image">
+                    <div class="fleet-content">
+                        <span class="vehicle-type">Safari Vehicle</span>
+                        <h3>Toyota Land Cruiser</h3>
+                        <p>Ideal for safaris — roomy, comfortable and reliable for Tanzania's diverse terrain. Perfect for game drives and long-distance travel.</p>
+                        <div class="fleet-features">
+                            <div class="feature">
+                                <i class="fas fa-users"></i>
+                                <span>6-7 passengers</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Air conditioned</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-suitcase"></i>
+                                <span>Ample luggage space</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Comprehensive insurance</span>
+                            </div>
+                        </div>
+                        <a href="booking.html" class="btn btn-primary" style="margin-top: 1rem;">Book This Vehicle</a>
+                    </div>
+                </div>
+                
+                <div class="card fleet-card fade-in">
+                    <img src="image/vn.jpg" alt="Wildlife Safari Adventure" class="package-image">
+                    <div class="fleet-content">
+                        <span class="vehicle-type">Group Transport</span>
+                        <h3>Toyota Hiace</h3>
+                        <p>Perfect for group transfers, airport shuttles, and corporate transportation needs. Comfortable and spacious for longer journeys.</p>
+                        <div class="fleet-features">
+                            <div class="feature">
+                                <i class="fas fa-users"></i>
+                                <span>12 passengers</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-suitcase"></i>
+                                <span>Luggage space</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Air conditioned</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-tv"></i>
+                                <span>Entertainment system</span>
+                            </div>
+                        </div>
+                        <a href="booking.html" class="btn btn-primary" style="margin-top: 1rem;">Book This Vehicle</a>
+                    </div>
+                </div>
+                
+                <div class="card fleet-card fade-in">
+                    <div class="fleet-image" style="background-image: url('https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="fleet-content">
+                        <span class="vehicle-type">Executive Transport</span>
+                        <h3>Executive Sedans</h3>
+                        <p>Luxury sedans for business travel, airport transfers, and special occasions. Professional drivers and premium comfort.</p>
+                        <div class="fleet-features">
+                            <div class="feature">
+                                <i class="fas fa-users"></i>
+                                <span>3-4 passengers</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Climate control</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-wifi"></i>
+                                <span>WiFi available</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Business amenities</span>
+                            </div>
+                        </div>
+                        <a href="booking.html" class="btn btn-primary" style="margin-top: 1rem;">Book This Vehicle</a>
+                    </div>
+                </div>
+                
+                <div class="card fleet-card fade-in">
+                    <img src="image/ca.JPG" alt="Wildlife Safari Adventure" class="package-image">
+                    <div class="fleet-content">
+                        <span class="vehicle-type">Family Vehicle</span>
+                        <h3>Family SUVs</h3>
+                        <p>Spacious SUVs perfect for family vacations, offering comfort, safety, and ample space for luggage and equipment.</p>
+                        <div class="fleet-features">
+                            <div class="feature">
+                                <i class="fas fa-users"></i>
+                                <span>7-8 passengers</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-child"></i>
+                                <span>Child seat compatible</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-suitcase"></i>
+                                <span>Large cargo area</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Safety features</span>
+                            </div>
+                        </div>
+                        <a href="booking.html" class="btn btn-primary" style="margin-top: 1rem;">Book This Vehicle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENHANCED Fleet Categories Section -->
+    <section class="section fleet-categories">
+        <div class="container">
+            <div class="section-title-decoration">
+                <span>Vehicle Categories</span>
+            </div>
+            <div class="section-header">
+                <h2>TANZANIA SAFARIS<br>UNFORGETTABLE EXPERIENCE</h2>
+                <p>Our fleet is organized into categories to help you find the perfect vehicle for your specific needs. From safari adventures to executive travel, we have the right vehicle for every journey.</p>
+            </div>
+            <div class="categories-grid">
+                <div class="card category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-binoculars"></i>
+                    </div>
+                    <h3>Safari Vehicles</h3>
+                    <p>Specially equipped for game drives and national park visits with pop-up roofs, comfortable seating, and expert guides for the ultimate wildlife experience.</p>
+                    <div class="category-highlight">
+                        <a href="booking.html" class="btn">Explore Safaris</a>
+                    </div>
+                </div>
+                
+                <div class="card category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Group Transport</h3>
+                    <p>Spacious vehicles perfect for families, tour groups, and corporate teams traveling together across Tanzania's beautiful landscapes.</p>
+                    <div class="category-highlight">
+                        <a href="booking.html" class="btn">Book Group Vehicle</a>
+                    </div>
+                </div>
+                
+                <div class="card category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Executive Cars</h3>
+                    <p>Luxury vehicles for business travelers, special occasions, and premium airport transfers with professional chauffeurs.</p>
+                    <div class="category-highlight">
+                        <a href="booking.html" class="btn">Executive Service</a>
+                    </div>
+                </div>
+                
+                <div class="card category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Cargo & Utility</h3>
+                    <p>Versatile vehicles for logistics, moving, and transportation of goods and equipment across Tanzania's diverse terrain.</p>
+                    <div class="category-highlight">
+                        <a href="booking.html" class="btn">Cargo Solutions</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem; position: relative; z-index: 1;">
+                <h3 style="color: white; margin-bottom: 1rem; font-size: 1.5rem;">WE ARE HERE!</h3>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">
+                    Ready to serve you with our modern fleet and professional drivers. Available for all your transportation needs.
+                </p>
+                <div class="hero-buttons" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-secondary" style="background: white; color: var(--primary);">Contact Us</a>
+                    <a href="booking.html" class="btn btn-primary" style="background: var(--accent); border: none;">Book Online Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Need a Specific Vehicle?</h2>
+                <p>Contact us to discuss your specific vehicle requirements and we'll find the perfect solution for you.</p>
+            </div>
+            <div class="hero-buttons" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-secondary btn-large">Contact Us</a>
+                <a href="booking.html" class="btn btn-primary btn-large">Book Vehicle</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>BISECH Company Limited</h3>
+                    <p>Your trusted partner for tours, car hire, and transportation services in Tanzania. Experience the beauty of Tanzania with our professional and reliable services.</p>
+                    <div class="social-links" style="margin-top: 1.5rem;">
+                        <a href="https://www.facebook.com/share/1GwAJnJiUo/" class="social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bisechtour?igsh=MW9xOGFiZmlocWE1Mg==" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/posts/bisech-tour-company_bisechtour-linkedin-activity-7366071093658374147-ahgq?utm_source=share&utm_medium=member_android&rcm=ACoAAC4UDyYBoYM0egEgsqaYbmTLh40iTWvk2qM" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/255718420969?text=Hello%20BISECH%2C%20I'm%20interested%20in%20your%20services.%20Can%20you%20provide%20more%20information%3F" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Car Hire</a></li>
+                        <li><a href="services.html">Safaris & Tours</a></li>
+                        <li><a href="services.html">Airport Transfers</a></li>
+                        <li><a href="services.html">Cargo Transport</a></li>
+                        <li><a href="packages.html">Tour Packages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="fleet.html">Our Fleet</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="contact.html">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    <p>&copy; 2025 BISECH Company Limited. All rights reserved.</p>
+                </div>
+                <div>
+                    <p>P.O. BOX 34593, DERM PLAZA, 7TH FLOOR MAKUMBUSHO, DAR ES SALAAM KINONDONI</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for fade elements
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+    </script>
+</body>
+</html>
