@@ -6,3 +6,6 @@ build/
 *.zip
 *.mp4
 *.mov
+"image.zip" 
+"image/*.MP4" 
+"image/*.MOV" 
